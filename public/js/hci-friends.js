@@ -8,11 +8,11 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
-	console.log("Javascript connected!");
-}
+ function initializePage() {
+ 	console.log("Javascript connected!");
+ }
 
-function anagrammedName(name) {
+ function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
 	
 	if (name == "Doug Engelbart") {
@@ -43,4 +43,14 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+	
+
 }
+
+
+$(".friend").click(function(e) {
+	e.preventDefault(); 
+	var name=$(this).text();
+	var anagram=anagrammedName(name);
+	$(this).text(anagram);
+	});
